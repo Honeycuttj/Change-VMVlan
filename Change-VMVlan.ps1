@@ -1,3 +1,6 @@
-﻿Connect-VIServer -Server 55.195.95.49
+﻿$VIServerIP = 1.1.1.1 
+$VlanName = New_Vlan
 
-Get-VM -Location Script_Tests | Get-NetworkAdapter | Set-NetworkAdapter -NetworkName VLAN_556 -Confirm:$false 
+Connect-VIServer -Server $VIServerIP
+
+Get-VM -Location Script_Tests | Get-NetworkAdapter | Set-NetworkAdapter -NetworkName $VlanName -Confirm:$false 
